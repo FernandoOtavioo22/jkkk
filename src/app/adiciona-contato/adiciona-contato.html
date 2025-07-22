@@ -11,14 +11,17 @@
     </div>
     <div>
         <label for="tipo">Tipo</label>
-        <select name="nome" id="tipo"> 
-            <option value="Amigo">Amigo(a)</option>
-            <option value="Familia">Familia</option>
-            <option value="Trabalho">Trabalho</option>
-            <option value="Outro">Outro</option>
+        <select name="nome" id="tipo" #ti> 
+            <option *ngFor="let op of opcoesContato" [value]="op">
+                {{op}}
+            </option>
         </select>
     </div>
     <div>
-        <input type="button" value="Adicionar"(click)="adicionar(nm.value, an.value, '')">
+        <input type="button" value="Adicionar"(click)="adicionar(nm.value, an.value, ti.value)">
     </div>
 </form>
+
+<table>
+
+</table>
